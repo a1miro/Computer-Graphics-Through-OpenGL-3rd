@@ -2,12 +2,12 @@
 // square.cpp
 //
 // OpenGL program to draw a square.
-// 
+//
 // Sumanta Guha.
 ///////////////////////////////////
 
 #include <GL/glew.h>
-#include <GL/freeglut.h> 
+#include <GL/freeglut.h>
 
 // Drawing routine.
 void drawScene(void)
@@ -41,7 +41,7 @@ void resize(int w, int h)
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	glOrtho(0.0, 100.0, 0.0, 100.0, -1.0, 1.0);
-	
+
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 }
@@ -62,18 +62,20 @@ void keyInput(unsigned char key, int x, int y)
 // Main routine.
 int main(int argc, char **argv)
 {
+
 	glutInit(&argc, argv);
 
-	glutInitContextVersion(4, 3);
+	glutInitContextVersion(4, 1);
 	glutInitContextProfile(GLUT_COMPATIBILITY_PROFILE);
 
+
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGBA);
-	
+
 	glutInitWindowSize(500, 500);
 	glutInitWindowPosition(100, 100);
-	
+
 	glutCreateWindow("square.cpp");
-	
+
 	glutDisplayFunc(drawScene);
 	glutReshapeFunc(resize);
 	glutKeyboardFunc(keyInput);
